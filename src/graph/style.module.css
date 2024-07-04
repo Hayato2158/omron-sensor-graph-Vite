@@ -1,0 +1,11 @@
+.grid {
+    display: grid;
+    grid-template-rows: 50% 50%;
+    grid-template-columns: 50% 50%;
+}
+.Line1 {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    margin-left: auto;
+    margin-right: auto;
+}
