@@ -1,18 +1,16 @@
 import React, { useEffect, useState } from "react";
-import { Box, Spinner, Text } from "@chakra-ui/react";
+import { Box, Text } from "@chakra-ui/react";
 import { useSensorGet } from "../hooks/sensor_api";
 
 import {
   CartesianGrid,
   Line,
   LineChart,
-  ResponsiveContainer,
   Tooltip,
   XAxis,
   YAxis,
 } from "recharts";
 
-import styles from "./style.module.css";
 import { SensorData } from "./types";
 
 interface GraphProps {
@@ -22,7 +20,7 @@ interface GraphProps {
 }
 
 const Graph: React.FC<GraphProps> = ({ title, dataKey, domain }) => {
-  const { sensor, isLoading } = useSensorGet();
+  const { sensor } = useSensorGet();
   const [data, setData] = useState<({ date: Date; value: number } | null)[]>(
     []
   );
